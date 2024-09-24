@@ -1,0 +1,14 @@
+t=0:0.001:1;
+n1=[1];
+d1=[1 10 0];
+c1=step(n1,d1,t);
+subplot(2,1,1);
+plot(t,c1);
+xlabel("time");
+ylabel("amplitude");
+title("unit step response for first order system");
+c2=impulse(n1,d1,t);
+subplot(2,1,2);
+plot(t,c2);
+xlabel("time");
+ylabel("amplitude");

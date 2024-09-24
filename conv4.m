@@ -1,0 +1,42 @@
+n1=[1 2];
+n2=[1 3];
+n3=[0 100];
+d1=[1 1];
+d2=[1 2];
+d3=[1 0];
+d4=[1 0];
+N1=[1 0];
+N11=[1 0];
+N2=[1 2];
+N3=[1 3];
+D1=[1 0];
+D11=[1 0];
+D111=[1 0];
+D2=[1 3];
+D3=[1 4];
+N21=[200 0 0];
+N22=[1 0];
+N23=[1 0];
+D21=[1 0];
+D22=[1 2];
+D23=[1 4];
+n4=conv(n1,n2);
+n5=conv(n4,n3); %{FIRST NUM }%
+d5=conv(d1,d2); 
+d6=conv(d5,d3);
+d7=conv(d6,d4);  %{FIRST DENO}%
+N4=conv(N2,N3);
+N5=conv(N4,N1); %{SECOND NUM}%
+D5=conv(D3,D4);
+D6=conv(D5,D1);
+D7=conv(D6,D2); %{SECOND DENO}%
+S1=conv(N21,N22);
+S2=conv(S1,N23);
+P1=conv(D22,D23);
+P2=conv(P1,D21);
+[n12 d12]=feedback(n5,d7,S2,P2);
+[N12 D12]=feedbck(N5,D7,n12,d12);
+f=tf(N12,D12)
+
+
+

@@ -1,0 +1,12 @@
+num1=[10];
+den1=[1 2];
+num2=[1];
+den2=[1 3];
+[num3,den3]=parallel(num1,den1,num2,den2);
+num4=[1 4];
+den4=[1 5];
+num5=[1];
+den5=[200 0 0];
+[num7,den7]=feedback(num4,den4,num5,den5);
+[num8,den8]=series(num3,den3,num7,den7);
+g=tf(num8,den8)

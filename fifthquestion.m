@@ -1,0 +1,9 @@
+num1=[1 1];
+den1=[1 5];
+num2=[1 3];
+den2=[1 10];
+num3=[1];
+den3=[1];
+[num4,den4]=series(num1,den1,num2,den2);
+[num5,den5]=feedback(num4,den4,num3,den3,-1);
+f=tf(num5,den5)
